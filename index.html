@@ -264,34 +264,34 @@
 
 <header>
   
-  <div class="eyebrow">Fuerza · Hipertrofia</div>
+  <div class="eyebrow">Strength · Hypertrophy</div>
   <h1>Pompetition 🍑</h1>
   <div class="quien">
-    <button class="qbtn on" data-q="violeta">Violeta</button>
+    <button class="qbtn" data-q="violeta">Violeta</button>
     <button class="qbtn" data-q="lyndsey">Lyndsey</button>
   </div>
-  <div class="subtitle"><span class="sep"></span>Bajar grasa y ganar músculo<span class="sep"></span></div>
+  <div class="subtitle"><span class="sep"></span>Lose fat and build muscle<span class="sep"></span></div>
   <div class="meta">
-    <span class="tag">3 días / semana</span>
-    <span class="tag">Ciclo <b>1:30</b></span>
+    <span class="tag">3 days / week</span>
+    <span class="tag">Cycle <b>1:30</b></span>
     <span class="tag">Core <b>1:00</b></span>
     </div>
 </header>
 
 <div class="rules">
-  <div class="rule"><b>Técnica primero:</b> las semanas 1-2 son para aprender el movimiento con peso ligero. Nunca entrenes al fallo — deja 3-4 reps en reserva.</div>
-  <div class="rule green"><b>Progresión:</b> cuando las reps salgan cómodas, sube un poco el peso (según la máquina) o suma 1-2 reps. Poco a poco.</div>
+  <div class="rule"><b>Technique first:</b> weeks 1-2 are for learning the movement with light weight. Never train to failure — leave 3-4 reps in reserve.</div>
+  <div class="rule green"><b>Progression:</b> when the reps feel easy, add a little weight (depending on the machine) or 1-2 reps. Little by little.</div>
 </div>
 
 <div id="dayNav"></div>
 
-<div id="tipBox"><div class="tl" id="tipHead">Tip del día</div><div id="tipBody"><div class="tx" id="tipText"></div><div class="dt" id="tipDate"></div></div><div id="prCongrats"></div></div>
+<div id="tipBox"><div class="tl" id="tipHead">Tip of the day</div><div id="tipBody"><div class="tx" id="tipText"></div><div class="dt" id="tipDate"></div></div><div id="prCongrats"></div></div>
 
 <div id="streakBox">
   <div class="fuegos" id="fuegos">🔥</div>
-  <div class="rtxt" id="rtxt">Empieza tu racha hoy</div>
-  <div class="rsub" id="rsub">Anota tus pesos y enciende el primer fuego</div>
-  <button id="colBtn">🎖 Ver colección</button>
+  <div class="rtxt" id="rtxt">Start your streak today</div>
+  <div class="rsub" id="rsub">Log your weights and light the first fire</div>
+  <button id="colBtn">🎖 View collection</button>
   <div id="coleccion"></div>
 </div>
 <div id="days"></div>
@@ -308,11 +308,11 @@
     </svg>
     <div id="clockCenter">
       <div id="clockNum">1:30</div>
-      <div id="setProg">Serie 1/4</div>
+      <div id="setProg">Set 1/4</div>
     </div>
   </div>
   <div id="timerCtrl">
-    <div><button class="tbtn prim" id="tStart">INICIAR</button></div>
+    <div><button class="tbtn prim" id="tStart">START</button></div>
     <div id="setsLine"><span class="setslab">SETS</span>
       <button class="tbtn" id="sMinus">−</button><b id="setNum">4</b><button class="tbtn" id="sPlus">+</button>
       <button class="tbtn" id="t2m">1:30</button><button class="tbtn" id="t3m">2:00</button>
@@ -323,14 +323,14 @@
 </div>
 
 <div id="prWrap">
-  <button id="prBtn"><span>🏆 Récords personales</span><span id="prChev" class="chev2">▾</span></button>
+  <button id="prBtn"><span>🏆 Personal records</span><span id="prChev" class="chev2">▾</span></button>
   <div id="prBody"><div id="prList" class="prlist"></div></div>
 </div>
 <div id="toast"></div>
 
 <footer>
-  Regla A/B · Registra cada semana tocando un ejercicio.<br>
-  Los datos se guardan en este dispositivo.
+  Rule A/B · Log each week by tapping an exercise.<br>
+  Your data is saved on this device.
 </footer>
 
 <script>
@@ -338,44 +338,44 @@
 /* color del dia activo */
 const ACCENTS = {d1:'#ff7ab8', d2:'#ff8a3d'};
 const DAYS = [
- {id:'d1', name:'Día 1', focus:'W4.B · 9 sets', color:ACCENTS.d1, exercises:[
+ {id:'d1', name:'Day 1', focus:'W4.B · 9 sets', color:ACCENTS.d1, exercises:[
    {n:'Superset: Bulgarian Split Squat + Single Leg RDL',
     sr:'3 × 8 por pierna',
-    nota:'Súper serie del infierno. 1 BSS + 1 RDL = 1 rep, sin descanso entre los dos. KTB de 24 kg EN CONTRALATERAL (en la mano opuesta a la pierna que trabaja). Tempo: 2 segundos para bajar en AMBOS ejercicios. En el RDL no hace falta tocar el piso con la KTB.',
+    nota:'Superset from hell. 1 BSS + 1 RDL = 1 rep, no rest between the two. 24 kg kettlebell on the CONTRALATERAL side (in the hand opposite the working leg). Tempo: 2 seconds down on BOTH exercises. On the RDL you don\'t need to touch the floor with the kettlebell.',
     cyc:180},
    {n:'Dual Elevated Single Leg Hip Thrust',
     sr:'3 × 11 por pierna',
-    nota:'SIN peso por ahora. Tempo 2/0/2/0: 2 segundos para subir, 2 para bajar. El objetivo es lograr el rango COMPLETO en cada repetición. Aprieten fuerte el glúteo arriba y controlen toda la bajada.',
+    nota:'NO weight for now. Tempo 2/0/2/0: 2 seconds up, 2 seconds down. The goal is a FULL range of motion on every rep. Squeeze the glute hard at the top and control the whole way down.',
     cyc:180},
    {n:'Side Lying Hip Abductions',
     sr:'3 × 10 por pierna',
-    nota:'Con disco de 15 lbs. Tempo normal. Mantengan la cadera estable y NO giren el cuerpo: el trabajo lo tiene que hacer el glúteo medio, no la espalda.',
+    nota:'With a 15 lb plate. Normal tempo. Keep the hip stable and do NOT rotate your body: the work has to be done by the glute medius, not the back.',
     cyc:180},
    {n:'FINISHER — Banded diagonal monster walk',
     sr:'1 minuto',
-    nota:'Con liga mediana. Un minuto seguido, sin parar.',
+    nota:'With a medium band. One minute straight, no stopping.',
     cyc:120},
  ]},
- {id:'d2', name:'Día 2', focus:'W6.A · 14 sets', color:ACCENTS.d2, exercises:[
+ {id:'d2', name:'Day 2', focus:'W6.A · 14 sets', color:ACCENTS.d2, exercises:[
    {n:'Hip Thrust',
     sr:'4 × 10',
-    nota:'Con pausa de 1-2 segundos arriba. Intenten llegar cerca del fallo: si sienten que pueden hacer UNA repetición más, háganla. La idea es que la última cueste mucho, pero con buena técnica.',
+    nota:'Pause 1-2 seconds at the top. Get close to failure: if you feel you can do ONE more rep, do it. The idea is for the last one to be very hard, but with good technique.',
     cyc:120},
    {n:'Barbell Bulgarian Split Squat',
     sr:'4 × 12 por pierna',
-    nota:'Tempo 2-1-0-0: bajada de 2 segundos, pausa de 1 segundo abajo, subida explosiva.',
+    nota:'Tempo 2-1-0-0: 2 seconds down, 1 second pause at the bottom, explosive up.',
     cyc:180},
    {n:'Double Kettlebell GHD Back Extensions',
     sr:'3 × 15',
-    nota:'Tempo 3-1-0-1: bajada controlada de 3 segundos, pausa de 1 segundo abajo, subida explosiva. Los brazos van extendidos para levantar las pesas. Controlen TODA la bajada y aprieten fuerte los glúteos arriba.',
+    nota:'Tempo 3-1-0-1: 3 seconds controlled down, 1 second pause at the bottom, explosive up. Arms stay extended to lift the weights. Control the WHOLE way down and squeeze the glutes hard at the top.',
     cyc:120},
    {n:'Dumbbell Glute Kickback',
     sr:'3 × 15 por pierna',
-    nota:'Tempo normal. Busquen una contracción fuerte del glúteo en cada repetición y NO se impulsen con la espalda.',
+    nota:'Normal tempo. Go for a strong glute contraction on every rep and do NOT drive with your back.',
     cyc:120},
    {n:'FINISHER — Banded diagonal monster walk',
     sr:'2 minutos',
-    nota:'Con liga mediana. Dos veces por semana.',
+    nota:'With a medium band. Twice a week.',
     cyc:120},
  ]},
 ];
@@ -471,9 +471,9 @@ function anadirSerie(key,w){ const a=seriesDe(key,w); a.push(['','']); guardarSe
 function quitarSerie(key,w,i){ const a=seriesDe(key,w); a.splice(i,1); guardarSeries(key); }
 function resumenSeries(arr){
   const con=(arr||[]).filter(s=>s[0]&&s[1]);
-  if(!con.length) return 'Sin series anotadas todavía';
+  if(!con.length) return 'No sets logged yet';
   const vol=con.reduce((t,s)=>t+(prNumeric(s[0])||0)*(prNumeric(s[1])||0),0);
-  return con.length+(con.length===1?' serie':' series')+' <span>·</span> '+Math.round(vol).toLocaleString('en-US')+' kg de volumen';
+  return con.length+(con.length===1?' set':' series')+' <span>·</span> '+Math.round(vol).toLocaleString('en-US')+' kg of volume';
 }
 function pintarSeries(box,key){
   if(_semActiva[key]===undefined) _semActiva[key]=0;
@@ -492,7 +492,7 @@ function pintarSeries(box,key){
   for(let i=0;i<n;i++){
     const sr=arr[i]||['',''];
     h+='<div class="srow">'+
-       '<span class="sn">Serie '+(i+1)+'</span>'+
+       '<span class="sn">Set '+(i+1)+'</span>'+
        '<input class="sip" data-i="'+i+'" data-c="0" inputmode="decimal" placeholder="kg" value="'+(sr[0]||'')+'">'+
        '<span class="x">×</span>'+
        '<input class="sip" data-i="'+i+'" data-c="1" inputmode="numeric" placeholder="rep" value="'+(sr[1]||'')+'">'+
@@ -500,7 +500,7 @@ function pintarSeries(box,key){
        '</div>';
   }
   h+='</div>';
-  h+='<button class="sadd">+ Añadir serie</button>';
+  h+='<button class="sadd">+ Add set</button>';
   h+='<div class="sres">'+resumenSeries(arr)+'</div>';
   box.innerHTML=h;
 
@@ -567,7 +567,7 @@ function checkPR(key, val, w){
     if(prev>0){ // solo avisar cuando ya tenia marca previa
       const parts=key.split('_'); const di=parseInt(parts[0].replace('d',''),10)-1; const ei=parseInt(parts[1],10);
       const nm=(DAYS[di]&&DAYS[di].exercises[ei])?DAYS[di].exercises[ei].n:key;
-      showToast('¡NUEVO RÉCORD!', nm+' · '+val);
+      showToast('NEW RECORD!', nm+' · '+val);
     }
     syncPRs();
   }
@@ -608,7 +608,7 @@ function renderCongrats(){
     }
   });
   if(!hits.length){ box.style.display='none'; return; }
-  box.innerHTML='🏆 <b>Récords de ayer:</b> '+hits.map(function(h){ return h.nm+' <b>'+h.v+'</b>'; }).join(' · ');
+  box.innerHTML='🏆 <b>Records from yesterday:</b> '+hits.map(function(h){ return h.nm+' <b>'+h.v+'</b>'; }).join(' · ');
   box.style.display='block';
 }
 
@@ -697,7 +697,7 @@ async function kcalLoad(){
       if(d&&d.kcal){
         document.getElementById('kcalVal').textContent='~'+d.kcal+' kcal';
         document.getElementById('kcalMacros').textContent=(d.macros||'');
-        document.getElementById('kcalNote').textContent=(d.note||'Estimación aproximada')+(d.date?(' · '+d.date):'');
+        document.getElementById('kcalNote').textContent=(d.note||'Rough estimate')+(d.date?(' · '+d.date):'');
       }
     }
   }catch(e){}
@@ -716,7 +716,7 @@ document.addEventListener('DOMContentLoaded',function(){});
 })();
 /* foodLoad()/kcalLoad() — quitados: eran de Karina */
 
-const LBL={sinRacha:'Empieza tu racha hoy',anota:'Anota tus pesos y enciende el primer fuego',racha:'🔥 {n} días seguidos',racha1:'🔥 {n} día seguido',faltan:'Te faltan {n} para {ico}',todos:'¡Colección completa!',chispa:'Chispa',impulso:'Impulso',constancia:'Constancia',medalla:'Medalla',diamante:'Diamante',corona:'Corona',leyenda:'Leyenda'};
+const LBL={sinRacha:'Start your streak today',anota:'Log your weights and light the first fire',racha:'🔥 {n} days in a row',racha1:'🔥 {n} day in a row',faltan:'Te faltan {n} para {ico}',todos:'Collection complete!',chispa:'Chispa',impulso:'Impulso',constancia:'Constancia',medalla:'Medalla',diamante:'Diamante',corona:'Corona',leyenda:'Leyenda'};
 
 /* ===== RACHA Y COLECCION ===== */
 let actCache={};
@@ -825,12 +825,12 @@ function renderDays(){
       <span class="chev">▾</span>
     </div></div>
     <div class="wrows" id="rows_${di}_${ei}">
-      <div class="vidrow"><a class="vidbtn" target="_blank" rel="noopener" title="Toca para ver la técnica"
-        href="https://www.youtube.com/results?search_query=${encodeURIComponent(ex.n + ' ejercicio como hacer tecnica')}">
-        <span class="vleft"><span class="vplay">▶</span><span><span class="vlabel">VER VIDEO</span><span class="vsub">Toca para ver la técnica</span></span></span>
+      <div class="vidrow"><a class="vidbtn" target="_blank" rel="noopener" title="Tap to see the technique"
+        href="https://www.youtube.com/results?search_query=${encodeURIComponent(ex.n + ' exercise how to technique')}">
+        <span class="vleft"><span class="vplay">▶</span><span><span class="vlabel">VER VIDEO</span><span class="vsub">Tap to see the technique</span></span></span>
         <span class="vgo">›</span></a></div>
       ${ex.nota?'<div class="notaex">'+ex.nota+'</div>':''}
-      ${baseInfo(ex.n)?'<div class="basenote">Última marca: <b>'+baseInfo(ex.n)+'</b></div>':''}
+      ${baseInfo(ex.n)?'<div class="basenote">Last mark: <b>'+baseInfo(ex.n)+'</b></div>':''}
       <div class="sbox" id="sbox_${di}_${ei}"></div>
     </div>
     </div>`;
@@ -871,7 +871,7 @@ document.querySelectorAll('.ex').forEach(ex=>{
       const ns=parseInt(ex.dataset.sets,10); const nc=parseInt(ex.dataset.cyc,10);
       if(ns>=1&&ns<=12){ setsTotal=ns; setNumEl.textContent=ns; }
       if(nc>=10){ stopT(); total=nc; left=nc; doneSets=0; renderProg(); renderClock();
-        document.getElementById('tStart').textContent='INICIAR'; }
+        document.getElementById('tStart').textContent='START'; }
     }
   });
 });
@@ -900,7 +900,12 @@ document.documentElement.style.setProperty('--daycolor', DAYS[0].color);
    Al cambiar de persona se recarga la pagina. Es lo mas simple y lo mas seguro:
    todo el estado (logs, PRs, series) se lee al arrancar, y recargando no hay que
    ir vaciando nada a mano. */
+/* ===== EL RESALTADO, SEGUN QUIEN ESTE ELEGIDO =====
+   Antes el "on" estaba PUESTO A MANO en Violeta, y nadie lo movia. Asi que al
+   elegir a Lyndsey los datos SI cambiaban, pero el boton seguia resaltando a
+   Violeta — y parecia que la pestaña de Lyndsey no existia. */
 document.querySelectorAll('.qbtn').forEach(b => {
+  if (b.dataset.q === QUIEN) b.classList.add('on');
   b.onclick = () => {
     const q = b.dataset.q;
     if (q === QUIEN) return;
@@ -928,7 +933,7 @@ function renderClock(){
 }
 function renderProg(){
   if(doneSets>=setsTotal){ progEl.textContent='COMPLETADO'; progEl.className='done'; return; }
-  progEl.textContent='Serie '+(doneSets+1)+'/'+setsTotal;
+  progEl.textContent='Set '+(doneSets+1)+'/'+setsTotal;
   progEl.className=(doneSets>0)?'good':'';
 }
 let AC=null;
@@ -954,7 +959,7 @@ function chime(){
   try{ navigator.vibrate&&navigator.vibrate([250,120,250]);}catch(e){}
 }
 function stopT(){ clearInterval(timerInt); running=false; clockEl.classList.remove('run');
-  document.getElementById('tStart').textContent='INICIAR'; }
+  document.getElementById('tStart').textContent='START'; }
 function startT(){
   audioUnlock();
   if(running){ stopT(); return; }
@@ -974,10 +979,10 @@ function setTotal(v){
   total=Math.max(10,v); if(!running){ left=total; doneSets=0; renderProg(); } renderClock();
 }
 document.getElementById('tStart').onclick=startT;
-document.getElementById('tP30').onclick=()=>{ stopT(); setTotal(total+30); document.getElementById('tStart').textContent='INICIAR'; };
-document.getElementById('t2m').onclick=()=>{ stopT(); setTotal(90); document.getElementById('tStart').textContent='INICIAR'; };
-document.getElementById('t3m').onclick=()=>{ stopT(); setTotal(120); document.getElementById('tStart').textContent='INICIAR'; };
-document.getElementById('tReset').onclick=()=>{ stopT(); left=0; doneSets=0; renderProg(); renderClock(); document.getElementById('tStart').textContent='INICIAR'; };
+document.getElementById('tP30').onclick=()=>{ stopT(); setTotal(total+30); document.getElementById('tStart').textContent='START'; };
+document.getElementById('t2m').onclick=()=>{ stopT(); setTotal(90); document.getElementById('tStart').textContent='START'; };
+document.getElementById('t3m').onclick=()=>{ stopT(); setTotal(120); document.getElementById('tStart').textContent='START'; };
+document.getElementById('tReset').onclick=()=>{ stopT(); left=0; doneSets=0; renderProg(); renderClock(); document.getElementById('tStart').textContent='START'; };
 document.getElementById('sMinus').onclick=()=>{ if(setsTotal>1){setsTotal--; setNumEl.textContent=setsTotal; doneSets=0; renderProg();} };
 document.getElementById('sPlus').onclick=()=>{ if(setsTotal<12){setsTotal++; setNumEl.textContent=setsTotal; doneSets=0; renderProg();} };
 renderClock(); renderProg();
