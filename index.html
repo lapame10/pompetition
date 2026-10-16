@@ -228,6 +228,7 @@
     color:var(--daycolor,var(--orange));background:color-mix(in srgb, var(--daycolor,#ff8a3d) 16%, transparent);}
   .ex .blkT{font-size:10px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--dim);}
   .ex .blkD{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--dim);margin-left:auto;}
+  .infoonly{font-size:11px;color:var(--dim);text-align:center;font-style:italic;padding:2px 0 4px;}
 </style>
 </head>
 <body>
@@ -321,7 +322,7 @@ const DAYS = [
     n:'Side Lying Hip Abductions',
     sr:'3 \u00d7 10 per leg \u00b7 @15 lb plate',
     nota:'Normal tempo. Keep the hip stable and do not rotate your body, so all the work comes from the glute medius.'},
-   {blk:'F', tipo:'Finisher', tot:'1:00 min', cyc:60,
+   {blk:'F', tipo:'Finisher', tot:'1:00 min', cyc:60, info:true,
     n:'Banded Diagonal Monster Walk',
     sr:'1 min \u00b7 medium band',
     nota:'One minute straight, no stopping. Medium band.'},
@@ -343,7 +344,7 @@ const DAYS = [
     n:'Dumbbell Glute Kickback',
     sr:'3 \u00d7 15 per leg',
     nota:'Normal tempo. Go for a strong glute contraction on every rep and do not drive with your back.'},
-   {blk:'F', tipo:'Finisher', tot:'2:00 min', cyc:120,
+   {blk:'F', tipo:'Finisher', tot:'2:00 min', cyc:120, info:true,
     n:'Banded Diagonal Monster Walk',
     sr:'2 min \u00b7 twice a week',
     nota:'Medium band. Twice a week.'},
@@ -367,7 +368,7 @@ try { logs = JSON.parse(localStorage.getItem(LS)) || {}; } catch(e) {}
 /* ====== SINCRONIZACION EN NUBE (Firebase Realtime) ====== */
 const RTDB='https://plan-gym-8aff7-default-rtdb.firebaseio.com';
 const CLOUD='pompetition/'+QUIEN;
-const BUILD='p3';   // SUBIR EN CADA DEPLOY -> auto-actualiza la pagina
+const BUILD='p4';   // SUBIR EN CADA DEPLOY -> auto-actualiza la pagina
 let _syncT=null;
 async function cloudLoad(){
   try{
@@ -696,7 +697,7 @@ function renderDays(){
         <span class="vgo">›</span></a></div>
       ${ex.nota?'<div class="notaex">'+ex.nota+'</div>':''}
       ${baseInfo(ex.n)?'<div class="basenote">Last mark: <b>'+baseInfo(ex.n)+'</b></div>':''}
-      <div class="sbox" id="sbox_${di}_${ei}"></div>
+      ${ex.info?'<div class="infoonly">Just do it \u2014 nothing to log here.</div>':'<div class="sbox" id="sbox_'+di+'_'+ei+'"></div>'}
     </div>
     </div>`;
   });
@@ -705,6 +706,7 @@ function renderDays(){
 
   // registro por SEMANA -> SERIES
   d.exercises.forEach((ex,ei)=>{
+    if(ex.info) return;   // el finisher es info: no se registra
     pintarSeries(card.querySelector('#sbox_'+di+'_'+ei), weekKey(d.id,ei));
   });
   });
