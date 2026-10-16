@@ -368,7 +368,7 @@ try { logs = JSON.parse(localStorage.getItem(LS)) || {}; } catch(e) {}
 /* ====== SINCRONIZACION EN NUBE (Firebase Realtime) ====== */
 const RTDB='https://plan-gym-8aff7-default-rtdb.firebaseio.com';
 const CLOUD='pompetition/'+QUIEN;
-const BUILD='p4';   // SUBIR EN CADA DEPLOY -> auto-actualiza la pagina
+const BUILD='p5';   // SUBIR EN CADA DEPLOY -> auto-actualiza la pagina
 let _syncT=null;
 async function cloudLoad(){
   try{
@@ -414,7 +414,7 @@ const _semActiva={};
 function normaliza(v){
   if(!v) return [];
   if(Array.isArray(v) && v.length && Array.isArray(v[0])) return v;
-  if(Array.isArray(v) && v.length>=2 && !Array.isArray(v[0])) return [v];   // formato viejo: un solo [kg,rep]
+  if(Array.isArray(v) && v.length>=2 && !Array.isArray(v[0])) return [v];   // formato viejo: un solo [peso,rep]
   return [];
 }
 function seriesDe(key,w){
@@ -444,7 +444,7 @@ function resumenSeries(arr){
   const con=(arr||[]).filter(s=>s[0]&&s[1]);
   if(!con.length) return 'No sets logged yet';
   const vol=con.reduce((t,s)=>t+(prNumeric(s[0])||0)*(prNumeric(s[1])||0),0);
-  return con.length+(con.length===1?' set':' series')+' <span>·</span> '+Math.round(vol).toLocaleString('en-US')+' volume';
+  return con.length+(con.length===1?' set':' series')+' <span>·</span> '+Math.round(vol).toLocaleString('en-US')+' lb of volume';
 }
 function pintarSeries(box,key){
   if(_semActiva[key]===undefined) _semActiva[key]=0;
@@ -464,7 +464,7 @@ function pintarSeries(box,key){
     const sr=arr[i]||['',''];
     h+='<div class="srow">'+
        '<span class="sn">Set '+(i+1)+'</span>'+
-       '<input class="sip" data-i="'+i+'" data-c="0" inputmode="decimal" placeholder="kg" value="'+(sr[0]||'')+'">'+
+       '<input class="sip" data-i="'+i+'" data-c="0" inputmode="decimal" placeholder="lb" value="'+(sr[0]||'')+'">'+
        '<span class="x">×</span>'+
        '<input class="sip" data-i="'+i+'" data-c="1" inputmode="numeric" placeholder="rep" value="'+(sr[1]||'')+'">'+
        '<span class="sdel ph"></span>'+
@@ -526,7 +526,7 @@ function renderPRs(){
   const rows=keys.map(k=>{
     const parts=k.split('_'); const di=parseInt(parts[0].replace('d',''),10)-1; const ei=parseInt(parts[1],10);
     const nm=(DAYS[di]&&DAYS[di].exercises[ei])?DAYS[di].exercises[ei].n:k;
-    return {nm:nm, v:PRS[k].raw+(prLabel(PRS[k].raw)?'':' kg'), wk:PRS[k].wk, n:PRS[k].n};
+    return {nm:nm, v:PRS[k].raw+(prLabel(PRS[k].raw)?'':' lb'), wk:PRS[k].wk, n:PRS[k].n};
   }).sort((a,b)=>b.n-a.n);
   list.innerHTML=rows.map(r=>'<div class="prrow"><span class="pname">'+r.nm+'</span><span><span class="pval">'+r.v+'</span><span class="pwk">'+r.wk+'</span></span></div>').join('');
 }
@@ -575,7 +575,7 @@ function renderCongrats(){
     if(p.date===y0){   // PR de ayer
       const parts=k.split('_'); const di=parseInt(parts[0].replace('d',''),10)-1; const ei=parseInt(parts[1],10);
       const nm=(DAYS[di]&&DAYS[di].exercises[ei])?DAYS[di].exercises[ei].n:k;
-      hits.push({nm:nm, v:p.raw+(prLabel(p.raw)?'':' kg'), hoy:p.date===t0});
+      hits.push({nm:nm, v:p.raw+(prLabel(p.raw)?'':' lb'), hoy:p.date===t0});
     }
   });
   if(!hits.length){ box.style.display='none'; return; }
