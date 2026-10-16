@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -9,7 +9,8 @@
 <title>Pompetition 🍑 — Violeta &amp; Lyndsey</title>
 <!-- ===== APP ===== -->
 <link rel="manifest" href="manifest.json?v=3">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon-v3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-v3.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -76,39 +77,6 @@
   .ex .cyc{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--daycolor,var(--orange));
     background:color-mix(in srgb, var(--daycolor, #ff8a3d) 14%, transparent);padding:4px 9px;border-radius:8px;white-space:nowrap;}
   .ex .cyc.alt{color:var(--daycolor,var(--orange));background:color-mix(in srgb, var(--daycolor, #ff8a3d) 9%, transparent);border:1px solid color-mix(in srgb, var(--daycolor, #ff8a3d) 35%, transparent);}
-  /* COMIDA */
-  .foodcard{padding:0 16px 10px;}
-  .foodcard h2{margin:14px 0 4px;}
-  #foodArea{width:100%;min-height:120px;background:var(--card);border:1px solid var(--line);border-radius:14px;
-    color:#fff;font-family:inherit;font-size:14px;line-height:1.5;padding:12px;outline:none;resize:vertical;}
-  #foodArea:focus{border-color:var(--daycolor,var(--orange));}
-  #foodArea::placeholder{color:#4a4a58;}
-  .foodmeta{display:flex;justify-content:space-between;font-size:10px;color:var(--dim);margin:6px 2px 0;}
-  .kcalbox{margin-top:12px;background:linear-gradient(135deg,rgba(61,214,140,.12),rgba(61,214,140,.04));
-    border:1px solid rgba(61,214,140,.3);border-radius:14px;padding:12px 14px;}
-  .kcalbox .kl{font-size:9px;letter-spacing:2px;color:var(--green);font-weight:800;text-transform:uppercase;}
-  .kcalbox .kv{font-family:var(--mono);font-size:26px;font-weight:800;color:var(--green);margin-top:4px;}
-  .kcalbox .km{font-size:12px;color:#dcdce4;margin-top:4px;line-height:1.5;}
-  .kcalbox .kn{font-size:10px;color:var(--dim);margin-top:6px;}
-
-  /* CAMINATA */
-  .walkweeks{display:flex;gap:5px;overflow-x:auto;margin-bottom:10px;padding-bottom:2px;}
-  .wchip{flex:0 0 auto;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--dim);
-    border-radius:8px;padding:5px 9px;font-family:var(--mono);font-size:10.5px;font-weight:800;cursor:pointer;}
-  .wchip.on{background:color-mix(in srgb, var(--daycolor,#ff8a3d) 18%, transparent);color:#fff;
-    border-color:color-mix(in srgb, var(--daycolor,#ff8a3d) 50%, transparent);}
-  .walkblock{margin:16px 16px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;}
-  .walkhead{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;}
-  .walkhead b{font-size:14px;}
-  .walkhead span{font-size:10.5px;color:var(--dim);}
-  .walkrow{display:grid;grid-template-columns:56px 1fr 18px 1fr;gap:5px;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-  .walkrow .wd{font-family:var(--mono);font-size:10.5px;font-weight:800;color:var(--dim);}
-  .walkrow input{width:100%;background:rgba(255,255,255,.04);border:1px solid transparent;outline:none;color:#fff;
-    font-family:var(--mono);font-size:15px;text-align:center;padding:6px 4px;border-radius:8px;min-width:0;}
-  .walkrow input:focus{border-color:var(--daycolor,var(--orange));}
-  .walkrow input::placeholder{color:#3c3c48;font-size:12px;}
-  .walkrow .wx{color:#4a4a58;font-size:10px;text-align:center;}
-  .walkrow.done input{background:rgba(61,214,140,.08);color:var(--green);}
   /* RACHA + COLECCION */
   #streakBox{margin:12px 16px 0;background:linear-gradient(150deg,rgba(255,120,40,.13),rgba(255,80,120,.06));
     border:1px solid rgba(255,138,61,.32);border-radius:16px;padding:13px 14px;}
@@ -258,6 +226,11 @@
     body{background:#fff;color:#000} .ex,.ex *{background:#fff!important;color:#000!important;border-color:#ccc!important}
     table.open{display:table!important} th,td{border-color:#ccc}
   }
+  .ex .blk{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:5px;}
+  .ex .blkB{font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:6px;
+    color:var(--daycolor,var(--orange));background:color-mix(in srgb, var(--daycolor,#ff8a3d) 16%, transparent);}
+  .ex .blkT{font-size:10px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--dim);}
+  .ex .blkD{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--dim);margin-left:auto;}
 </style>
 </head>
 <body>
@@ -270,7 +243,7 @@
     <button class="qbtn" data-q="violeta">Violeta</button>
     <button class="qbtn" data-q="lyndsey">Lyndsey</button>
   </div>
-  <div class="subtitle"><span class="sep"></span>Lose fat and build muscle<span class="sep"></span></div>
+  <div class="subtitle"><span class="sep"></span>Girls Glutes 🍑<span class="sep"></span></div>
   <div class="meta">
     <span class="tag">3 days / week</span>
     <span class="tag">Cycle <b>1:30</b></span>
@@ -279,7 +252,7 @@
 </header>
 
 <div class="rules">
-  <div class="rule"><b>Technique first:</b> weeks 1-2 are for learning the movement with light weight. Never train to failure — leave 3-4 reps in reserve.</div>
+  <div class="rule"><b>Technique first:</b> weeks 1-2 are for learning the movement with light weight. On the working sets go CLOSE to failure: if you feel you can do one more rep, do it. Always with clean technique.</div>
   <div class="rule green"><b>Progression:</b> when the reps feel easy, add a little weight (depending on the machine) or 1-2 reps. Little by little.</div>
 </div>
 
@@ -338,48 +311,48 @@
 /* color del dia activo */
 const ACCENTS = {d1:'#ff7ab8', d2:'#ff8a3d'};
 const DAYS = [
- {id:'d1', name:'Day 1', focus:'W4.B · 9 sets', color:ACCENTS.d1, exercises:[
-   {n:'Superset: Bulgarian Split Squat + Single Leg RDL',
-    sr:'3 × 8 por pierna',
-    nota:'Superset from hell. 1 BSS + 1 RDL = 1 rep, no rest between the two. 24 kg kettlebell on the CONTRALATERAL side (in the hand opposite the working leg). Tempo: 2 seconds down on BOTH exercises. On the RDL you don\'t need to touch the floor with the kettlebell.',
-    cyc:180},
-   {n:'Dual Elevated Single Leg Hip Thrust',
-    sr:'3 × 11 por pierna',
-    nota:'NO weight for now. Tempo 2/0/2/0: 2 seconds up, 2 seconds down. The goal is a FULL range of motion on every rep. Squeeze the glute hard at the top and control the whole way down.',
-    cyc:180},
-   {n:'Side Lying Hip Abductions',
-    sr:'3 × 10 por pierna',
-    nota:'With a 15 lb plate. Normal tempo. Keep the hip stable and do NOT rotate your body: the work has to be done by the glute medius, not the back.',
-    cyc:180},
-   {n:'FINISHER — Banded diagonal monster walk',
-    sr:'1 minuto',
-    nota:'With a medium band. One minute straight, no stopping.',
-    cyc:120},
+ {id:'d1', name:'Day 1', focus:'W4.B \u00b7 9 sets', color:ACCENTS.d1, exercises:[
+   {blk:'A', tipo:'Unilateral + Lengthened', tot:'10:30 min', cyc:210,
+    n:'Superset from Hell: Bulgarian Split Squat + Single Leg RDL',
+    sr:'3 \u00d7 8 per leg \u00b7 @24 kg KB',
+    nota:'1 BSS + 1 RDL = 1 rep. Do one Bulgarian, then one single leg RDL, and repeat with NO rest in between. The kettlebell goes CONTRALATERAL: in the hand opposite the working leg. Tempo: 2 seconds down on BOTH exercises. On the RDL you do not need to touch the floor with the kettlebell.'},
+   {blk:'B', tipo:'Shortened', tot:'8:15 min', cyc:165,
+    n:'Dual Elevated Single Leg Hip Thrust',
+    sr:'3 \u00d7 11 per leg \u00b7 bodyweight for now',
+    nota:'No weight for now. Goal: full range of motion on every rep with the slow tempo. Tempo 2/0/2/0: 2 seconds up, 2 seconds down. Squeeze the glute hard at the top and control the whole way down.'},
+   {blk:'C', tipo:'Isolation', tot:'7:30 min', cyc:150,
+    n:'Side Lying Hip Abductions',
+    sr:'3 \u00d7 10 per leg \u00b7 @15 lb plate',
+    nota:'Normal tempo. Keep the hip stable and do not rotate your body, so all the work comes from the glute medius.'},
+   {blk:'F', tipo:'Finisher', tot:'1:00 min', cyc:60,
+    n:'Banded Diagonal Monster Walk',
+    sr:'1 min \u00b7 medium band',
+    nota:'One minute straight, no stopping. Medium band.'},
  ]},
- {id:'d2', name:'Day 2', focus:'W6.A · 14 sets', color:ACCENTS.d2, exercises:[
-   {n:'Hip Thrust',
-    sr:'4 × 10',
-    nota:'Pause 1-2 seconds at the top. Get close to failure: if you feel you can do ONE more rep, do it. The idea is for the last one to be very hard, but with good technique.',
-    cyc:120},
-   {n:'Barbell Bulgarian Split Squat',
-    sr:'4 × 12 por pierna',
-    nota:'Tempo 2-1-0-0: 2 seconds down, 1 second pause at the bottom, explosive up.',
-    cyc:180},
-   {n:'Double Kettlebell GHD Back Extensions',
-    sr:'3 × 15',
-    nota:'Tempo 3-1-0-1: 3 seconds controlled down, 1 second pause at the bottom, explosive up. Arms stay extended to lift the weights. Control the WHOLE way down and squeeze the glutes hard at the top.',
-    cyc:120},
-   {n:'Dumbbell Glute Kickback',
-    sr:'3 × 15 por pierna',
-    nota:'Normal tempo. Go for a strong glute contraction on every rep and do NOT drive with your back.',
-    cyc:120},
-   {n:'FINISHER — Banded diagonal monster walk',
-    sr:'2 minutos',
-    nota:'With a medium band. Twice a week.',
-    cyc:120},
+ {id:'d2', name:'Day 2', focus:'W6.A \u00b7 14 sets', color:ACCENTS.d2, exercises:[
+   {blk:'A', tipo:'Shortened', tot:'8:00 min', cyc:120,
+    n:'Hip Thrust',
+    sr:'4 \u00d7 10',
+    nota:'Pause 1-2 seconds at the top. Go CLOSE to failure: if you feel you can do one more rep, do it. The idea is for the last rep to cost a lot, while keeping good technique.'},
+   {blk:'B', tipo:'Unilateral', tot:'14:00 min', cyc:210,
+    n:'Barbell Bulgarian Split Squat',
+    sr:'4 \u00d7 12 per leg',
+    nota:'Tempo 2-1-0-0: 2 seconds down, 1 second pause at the bottom, explosive on the way up.'},
+   {blk:'C', tipo:'Lengthened', tot:'6:00 min', cyc:120,
+    n:'Double Kettlebell GHD Back Extensions',
+    sr:'3 \u00d7 15',
+    nota:'Tempo 3-1-0-1: 3 seconds controlled down, 1 second pause at the bottom, explosive up. Arms stay extended to hold the weights. Control the whole way down and squeeze the glutes hard at the top of every rep.'},
+   {blk:'D', tipo:'Isolation', tot:'6:00 min', cyc:120,
+    n:'Dumbbell Glute Kickback',
+    sr:'3 \u00d7 15 per leg',
+    nota:'Normal tempo. Go for a strong glute contraction on every rep and do not drive with your back.'},
+   {blk:'F', tipo:'Finisher', tot:'2:00 min', cyc:120,
+    n:'Banded Diagonal Monster Walk',
+    sr:'2 min \u00b7 twice a week',
+    nota:'Medium band. Twice a week.'},
  ]},
 ];
-const WEEKS = ['S1','S2','S3','S4','S5','S6','S7','S8'];
+const WEEKS = ['W1','W2','W3','W4','W5','W6','W7','W8'];
 /* Peso base: empezar ligero (sin datos previos) */
 const HIST = {};
 function baseInfo(n){ return HIST[n]||null; }
@@ -397,7 +370,7 @@ try { logs = JSON.parse(localStorage.getItem(LS)) || {}; } catch(e) {}
 /* ====== SINCRONIZACION EN NUBE (Firebase Realtime) ====== */
 const RTDB='https://plan-gym-8aff7-default-rtdb.firebaseio.com';
 const CLOUD='pompetition/'+QUIEN;
-const BUILD='p1';   // SUBIR EN CADA DEPLOY -> auto-actualiza la pagina
+const BUILD='p2';   // SUBIR EN CADA DEPLOY -> auto-actualiza la pagina
 let _syncT=null;
 async function cloudLoad(){
   try{
@@ -429,7 +402,7 @@ async function tipLoad(){
       const d=await r.json();
       if(d&&d.text){
         document.getElementById('tipText').innerHTML=d.text;
-        document.getElementById('tipDate').textContent=d.date?('Actualizado: '+d.date):'';
+        document.getElementById('tipDate').textContent=d.date?('Updated: '+d.date):'';
         document.getElementById('tipBox').style.display='block';
       }
     }
@@ -473,7 +446,7 @@ function resumenSeries(arr){
   const con=(arr||[]).filter(s=>s[0]&&s[1]);
   if(!con.length) return 'No sets logged yet';
   const vol=con.reduce((t,s)=>t+(prNumeric(s[0])||0)*(prNumeric(s[1])||0),0);
-  return con.length+(con.length===1?' set':' series')+' <span>·</span> '+Math.round(vol).toLocaleString('en-US')+' kg of volume';
+  return con.length+(con.length===1?' set':' series')+' <span>·</span> '+Math.round(vol).toLocaleString('en-US')+' volume';
 }
 function pintarSeries(box,key){
   if(_semActiva[key]===undefined) _semActiva[key]=0;
@@ -483,7 +456,7 @@ function pintarSeries(box,key){
   let h='<div class="wkbar">';
   WEEKS.forEach(function(x,i){
     const tiene=normaliza(logs[key]&&logs[key][x]).some(function(s){ return s[0]&&s[1]; });
-    h+='<button class="wkchip'+(i===wi?' on':'')+(tiene?' has':'')+'" data-w="'+i+'">'+x.replace('Sem ','S')+'</button>';
+    h+='<button class="wkchip'+(i===wi?' on':'')+(tiene?' has':'')+'" data-w="'+i+'">'+x+'</button>';
   });
   h+='</div>';
 
@@ -551,7 +524,7 @@ function renderPRs(){
   if(!list) return;
   computePRs();
   const keys=Object.keys(PRS);
-  if(!keys.length){ list.innerHTML='<div style="color:var(--dim);font-size:12px;padding:6px 0">Aún no hay registros — cuando anoten pesos aparecerán aquí.</div>'; return; }
+  if(!keys.length){ list.innerHTML='<div style="color:var(--dim);font-size:12px;padding:6px 0">No entries yet — your sets will show up here once you log them.</div>'; return; }
   const rows=keys.map(k=>{
     const parts=k.split('_'); const di=parseInt(parts[0].replace('d',''),10)-1; const ei=parseInt(parts[1],10);
     const nm=(DAYS[di]&&DAYS[di].exercises[ei])?DAYS[di].exercises[ei].n:k;
@@ -563,7 +536,7 @@ function checkPR(key, val, w){
   const n=prNumeric(val); if(isNaN(n)) return;
   if(!PRS[key] || n>PRS[key].n){
     const prev=PRS[key]?PRS[key].n:0;
-    PRS[key]={n:n, raw:val, wk:(w||'Sem 1').replace('Sem ','S'), date:todayISO()};
+    PRS[key]={n:n, raw:val, wk:(w||'W1'), date:todayISO()};
     if(prev>0){ // solo avisar cuando ya tenia marca previa
       const parts=key.split('_'); const di=parseInt(parts[0].replace('d',''),10)-1; const ei=parseInt(parts[1],10);
       const nm=(DAYS[di]&&DAYS[di].exercises[ei])?DAYS[di].exercises[ei].n:key;
@@ -613,110 +586,7 @@ function renderCongrats(){
 }
 
 
-/* ====== CAMINATA (Karina) - por semana ====== */
-const WALKD=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
-const WALKW=['Sem 1','Sem 2','Sem 3','Sem 4','Sem 5','Sem 6','Sem 7','Sem 8'];
-let walk={};
-let walkWeek='Sem 1';
-function renderWalkWeeks(){
-  const box=document.getElementById('walkWeeks'); if(!box) return;
-  box.innerHTML='';
-  WALKW.forEach(function(w){
-    const b=document.createElement('button');
-    b.className='wchip'+(w===walkWeek?' on':''); b.textContent=w;
-    b.addEventListener('click',function(e){ e.stopPropagation(); walkWeek=w; renderWalkWeeks(); renderWalk(); });
-    box.appendChild(b);
-  });
-}
-function renderWalk(){
-  const box=document.getElementById('walkRows'); if(!box) return;
-  box.innerHTML='';
-  const wk=walk[walkWeek]||{};
-  WALKD.forEach(function(d){
-    const row=document.createElement('div'); row.className='walkrow';
-    const cur=wk[d]||{};
-    if(cur.km&&cur.min) row.classList.add('done');
-    const n=document.createElement('div'); n.className='wd'; n.textContent=d;
-    const mk=function(k,ph,mode){
-      const i=document.createElement('input'); i.type='text'; i.inputMode=mode; i.placeholder=ph;
-      i.value=cur[k]||'';
-      i.addEventListener('click',function(e){e.stopPropagation();});
-      i.addEventListener('input',function(){
-        walk[walkWeek]=walk[walkWeek]||{}; walk[walkWeek][d]=walk[walkWeek][d]||{}; walk[walkWeek][d][k]=i.value.trim();
-        localStorage.setItem('walkKarina',JSON.stringify(walk));
-        const w=walk[walkWeek][d];
-        row.classList.toggle('done', !!(w.km&&w.min));
-        syncWalk();
-      });
-      return i;
-    };
-    const x=document.createElement('div'); x.className='wx'; x.textContent='/';
-    row.appendChild(n); row.appendChild(mk('km','km','decimal')); row.appendChild(x); row.appendChild(mk('min','min','numeric'));
-    box.appendChild(row);
-  });
-}
-let _wT=null;
-function syncWalk(){
-  clearTimeout(_wT);
-  _wT=setTimeout(async function(){
-    try{ await fetch(RTDB+'/'+CLOUD+'/walk.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(walk)}); }catch(e){}
-  },700);
-}
-async function walkLoad(){
-  try{
-    const r=await fetch(RTDB+'/'+CLOUD+'/walk.json',{cache:'no-store'});
-    if(r.ok){ const d=await r.json(); if(d&&typeof d==='object'&&Object.keys(d).length){ walk=d; localStorage.setItem('walkKarina',JSON.stringify(walk)); } }
-  }catch(e){}
-  renderWalkWeeks(); renderWalk();
-}
-/* walkLoad() — quitado: era de Karina */
-
-
-/* ====== COMIDA (Karina) ====== */
-let food={ text:'', date:'' };
-let _fT=null;
-function foodSync(){
-  clearTimeout(_fT);
-  _fT=setTimeout(async function(){
-    try{ await fetch(RTDB+'/'+CLOUD+'/food.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(food)}); }catch(e){}
-  },800);
-}
-async function foodLoad(){
-  try{
-    const r=await fetch(RTDB+'/'+CLOUD+'/food.json',{cache:'no-store'});
-    if(r.ok){ const d=await r.json(); if(d&&d.text){ food=d; } }
-  }catch(e){}
-  const ta=document.getElementById('foodArea'); if(ta&&food.text) ta.value=food.text;
-  const fd=document.getElementById('foodDate'); if(fd) fd.textContent=food.date?('Registro: '+food.date):'Sin registro';
-}
-async function kcalLoad(){
-  try{
-    const r=await fetch(RTDB+'/'+CLOUD+'/food_summary.json',{cache:'no-store'});
-    if(r.ok){
-      const d=await r.json();
-      if(d&&d.kcal){
-        document.getElementById('kcalVal').textContent='~'+d.kcal+' kcal';
-        document.getElementById('kcalMacros').textContent=(d.macros||'');
-        document.getElementById('kcalNote').textContent=(d.note||'Rough estimate')+(d.date?(' · '+d.date):'');
-      }
-    }
-  }catch(e){}
-}
-document.addEventListener('DOMContentLoaded',function(){});
-(function(){
-  const ta=document.getElementById('foodArea');
-  if(!ta) return;
-  ta.addEventListener('input',function(){
-    const hoy=todayISO();
-    food={ text:ta.value, date:hoy };
-    document.getElementById('foodDate').textContent='Registro: '+hoy;
-    localStorage.setItem('foodKarina',JSON.stringify(food));
-    foodSync();
-  });
-})();
-/* foodLoad()/kcalLoad() — quitados: eran de Karina */
-
-const LBL={sinRacha:'Start your streak today',anota:'Log your weights and light the first fire',racha:'🔥 {n} days in a row',racha1:'🔥 {n} day in a row',faltan:'Te faltan {n} para {ico}',todos:'Collection complete!',chispa:'Chispa',impulso:'Impulso',constancia:'Constancia',medalla:'Medalla',diamante:'Diamante',corona:'Corona',leyenda:'Leyenda'};
+const LBL={sinRacha:'Start your streak today',anota:'Log your sets and light the first fire',racha:'🔥 {n} days in a row',racha1:'🔥 {n} day in a row',faltan:'{n} more to go for {ico}',todos:'Collection complete!',chispa:'Spark',impulso:'Drive',constancia:'Consistency',medalla:'Medal',diamante:'Diamond',corona:'Crown',leyenda:'Legend'};
 
 /* ===== RACHA Y COLECCION ===== */
 let actCache={};
@@ -799,13 +669,10 @@ DAYS.forEach((d,i)=>{
   b.onclick=()=>showDay(i);
   dayNav.appendChild(b);
 });
-(function(){
-  const b=document.createElement('button');
-  b.className='daybtn'; b.id='foodBtn';
-})();
 
 const daysEl = document.getElementById('days');
 let _currentDay = 0;
+function fmtSec(s){ s=parseInt(s,10)||0; return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 function renderDays(){
   daysEl.innerHTML='';
   DAYS.forEach((d,di)=>{
@@ -814,20 +681,21 @@ function renderDays(){
   card.id=d.id;
   let html='<h2><span class="bar" style="background:'+d.color+'"></span>'+d.name+' · '+d.focus+'</h2>';
   d.exercises.forEach((ex,ei)=>{
-    const isAlt = ex.cyc===180;
+    const isAlt = (ei%2===1);
     html+=`<div class="ex" data-ex="${di}_${ei}" data-cyc="${ex.cyc}" data-sets="${ex.sr.split('×')[0].trim()}">
     <div class="top"><div>
+      <div class="blk"><span class="blkB">${ex.blk}</span><span class="blkT">${ex.tipo}</span>${ex.tot?'<span class="blkD">'+ex.tot+'</span>':''}</div>
       <div class="nm">${ex.n}</div>
       <div class="sr"><b>${ex.sr}</b></div>
     </div>
     <div style="display:flex;align-items:center;gap:8px">
-      <span class="cyc${isAlt?' alt':''}">${ex.cyc===120?'2:00':'3:00'}</span>
+      <span class="cyc${isAlt?' alt':''}">${fmtSec(ex.cyc)}</span>
       <span class="chev">▾</span>
     </div></div>
     <div class="wrows" id="rows_${di}_${ei}">
       <div class="vidrow"><a class="vidbtn" target="_blank" rel="noopener" title="Tap to see the technique"
         href="https://www.youtube.com/results?search_query=${encodeURIComponent(ex.n + ' exercise how to technique')}">
-        <span class="vleft"><span class="vplay">▶</span><span><span class="vlabel">VER VIDEO</span><span class="vsub">Tap to see the technique</span></span></span>
+        <span class="vleft"><span class="vplay">▶</span><span><span class="vlabel">WATCH VIDEO</span><span class="vsub">Tap to see the technique</span></span></span>
         <span class="vgo">›</span></a></div>
       ${ex.nota?'<div class="notaex">'+ex.nota+'</div>':''}
       ${baseInfo(ex.n)?'<div class="basenote">Last mark: <b>'+baseInfo(ex.n)+'</b></div>':''}
@@ -879,20 +747,13 @@ document.querySelectorAll('.ex').forEach(ex=>{
 
 function showDay(i){
   if(typeof i === 'number') _currentDay = i;
-  const isFood=(i==='food');
   document.querySelectorAll('.daycard').forEach(c=>c.classList.remove('show'));
   document.querySelectorAll('.daybtn').forEach(b=>b.classList.remove('active'));
-  if(isFood){
-    document.getElementById('foodCard').classList.add('show');
-    document.getElementById('foodBtn').classList.add('active');
-    document.documentElement.style.setProperty('--daycolor', '#3dd6c8');
-  } else {
-    const cards=document.querySelectorAll('.daycard');
-    if(cards[i]) cards[i].classList.add('show');
-    const btns=document.querySelectorAll('.daybtn');
-    if(btns[i]) btns[i].classList.add('active');
-    if(DAYS[i]) document.documentElement.style.setProperty('--daycolor', DAYS[i].color);
-  }
+  const cards=document.querySelectorAll('.daycard');
+  if(cards[i]) cards[i].classList.add('show');
+  const btns=document.querySelectorAll('.daybtn');
+  if(btns[i]) btns[i].classList.add('active');
+  if(DAYS[i]) document.documentElement.style.setProperty('--daycolor', DAYS[i].color);
 }
 document.documentElement.style.setProperty('--daycolor', DAYS[0].color);
 
